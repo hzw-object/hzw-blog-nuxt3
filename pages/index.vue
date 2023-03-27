@@ -6,6 +6,11 @@ const { t } = useLang()
 definePageMeta({
   layout: 'page',
 })
+onMounted(async () => {
+  const { data } = await useAsyncData('count', () =>
+    $fetch('http://120.48.80.108:9998')
+  )
+})
 
 // vars
 const titlesText = computed<string[]>(() => t('pages.index.title').split('[]'))
