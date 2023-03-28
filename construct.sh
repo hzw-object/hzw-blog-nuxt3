@@ -1,7 +1,6 @@
 #!/bin/sh -l
 time=$(date "+%Y%m%d%H%M%S")
-pnpm install
-pnpm run build
+
 TAG=latest
 SERVER_NAME=hzw-blog-nuxt3
 SERVER_PORT=8001
