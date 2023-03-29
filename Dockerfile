@@ -6,5 +6,5 @@ RUN npm install -g pnpm
 RUN pnpm install --shamefully-hoist
 COPY . .
 RUN pnpm build
-EXPOSE 8002
+EXPOSE 3000
 CMD ["pnpm", "start"]

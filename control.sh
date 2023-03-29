@@ -29,5 +29,5 @@ else
   docker build -t $SERVER_NAME:$TAG .
 fi
 # 运行docker容器
-docker run --name $SERVER_NAME -d -p $SERVER_PORT:8002 $SERVER_NAME:$TAG
+docker run --name $SERVER_NAME -d -p $SERVER_PORT:3000 $SERVER_NAME:$TAG
 echo "$SERVER_NAME容器创建完成"
