@@ -6,4 +6,4 @@ RUN pnpm install
 COPY . .
 RUN pnpm build
 EXPOSE 80
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]
