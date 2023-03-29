@@ -3,7 +3,7 @@ time=$(date "+%Y%m%d%H%M%S")
 
 TAG=latest
 SERVER_NAME=hzw-blog-nuxt3
-SERVER_PORT=8001
+SERVER_PORT=8002
 #容器id
 CID=$(docker ps | grep "$SERVER_NAME" | awk '{print $1}')
 
