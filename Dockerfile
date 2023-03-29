@@ -6,4 +6,4 @@ RUN pnpm install --shamefully-hoist
 COPY . .
 RUN pnpm build
 EXPOSE 80
-CMD ["pnpm", "start"]
+RUN pnpm start
