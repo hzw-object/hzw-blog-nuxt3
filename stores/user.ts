@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-
+import { IData } from '~/types/webConfig'
 export interface ICounterState {
   searchFlag: boolean
   loginFlag: boolean
@@ -15,9 +15,12 @@ export interface ICounterState {
   webSite: string
   loginType: string
   email: string
+  webConfig?: IData | undefined
+
+  // blogInfo: {}
 }
 
-export const useCounter = defineStore('counter', {
+export const useUser = defineStore('counter', {
   state: (): ICounterState => ({
     searchFlag: false,
     loginFlag: false,
@@ -33,6 +36,7 @@ export const useCounter = defineStore('counter', {
     webSite: '',
     loginType: '',
     email: '',
+    webConfig: undefined,
   }),
   actions: {
     setStateValue(partial: Partial<ICounterState>) {

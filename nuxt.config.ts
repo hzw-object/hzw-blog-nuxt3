@@ -1,6 +1,10 @@
+import { resolve } from 'path'
 import UnpluginComponentsVite from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir)
+}
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   // server side rendering mode
@@ -83,10 +87,10 @@ export default defineNuxtConfig({
       analysis: {
         interpretUtilities: false,
       },
-      server: {
-        port: 4000,
-        open: false,
-      },
+      // server: {
+      //   port: 4000,
+      //   open: false,
+      // },
     },
     scan: true,
   },

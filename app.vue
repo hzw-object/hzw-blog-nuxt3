@@ -9,7 +9,7 @@ const app = useAppConfig() as AppConfigInput
 
 useHead({
   title: app.name,
-  titleTemplate: '%s - Nuxt 3 Awesome Starter',
+  titleTemplate: '%s - 韩zw',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {

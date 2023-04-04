@@ -10,6 +10,6 @@
       "@intlify/nuxt3",
       "@pinia/nuxt",
       "unplugin-icons/types/vue"
-    ]
+    ],
   }
 }

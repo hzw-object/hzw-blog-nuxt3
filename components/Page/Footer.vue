@@ -1,6 +1,13 @@
 <script lang="ts" setup>
 import { AppConfigInput } from '@nuxt/schema'
 import p from './../../package.json'
+import { useUser } from '~/stores/user'
+const UserInfo = useUser()
+
+const blogInfo = computed(() => {
+  return UserInfo.webConfig
+})
+
 const app = useAppConfig() as AppConfigInput
 </script>
 
@@ -9,12 +16,15 @@ const app = useAppConfig() as AppConfigInput
     <section
       class="max-w-8xl mx-auto px-4 lg:px-8 flex-1 flex w-full space-x-20"
     >
-      <div class="w-full py-4 text-center md:text-left">
+      <!-- <div class="w-full py-4 text-center md:text-left">
         <div class="mb-1">
           {{ app.name }}
         </div>
         <div class="text-xs text-gray-600 dark:text-gray-400">
-          Copyright © 2022 <a :href="app.author.link">{{ app.author.name }}</a
+          Copyright © 2022
+          <a :href="app.author.link">{{
+            userInfo.webConfig?.websiteConfig.alipayQRCode
+          }}</a
           >. All rights reserved. Made with <span class="text-red-500">❤</span>
           <div
             class="flex flex-col md:flex-row space-x-2 items-center md:float-right"
@@ -29,6 +39,16 @@ const app = useAppConfig() as AppConfigInput
             </span>
           </div>
         </div>
+      </div> -->
+      <div class="footer-wrap">
+        <div>
+          ©{{ blogInfo?.websiteConfig.websiteCreateTime }} -
+          {{ new Date().getFullYear() }} By
+          {{ blogInfo?.websiteConfig.websiteAuthor }}
+        </div>
+        <a href="https://beian.miit.gov.cn/" target="_blank">
+          {{ blogInfo?.websiteConfig.websiteRecordNo }}
+        </a>
       </div>
     </section>
   </footer>
